@@ -1,0 +1,1867 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+html{
+    font-size: 62.25%;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(48, 46, 46,);
+    scroll-behavior: smooth;
+}
+.nav-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 6%;
+    position: relative;
+    
+}
+.nav-area::after{
+    content: "";
+    width: 100%;
+    height: 1.5rem;
+    background-color: #9a381f;
+   position: absolute;
+   bottom: 0;
+    left: 0;
+}
+
+.logo{
+    height: 15rem;
+    width: 15rem;
+}
+.logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.logo-area-text{
+    font-size: 1.5rem;
+}
+.nav-links{
+    display: flex;
+}
+
+.nav-links li{
+    list-style: none;
+    padding: .5rem;
+}
+.nav-links li a{
+   display: inline-block;
+   padding: 1rem;
+   text-decoration: none;
+   font-size: 1.3rem;
+   font-weight: 600;
+   border-radius: .5rem;
+   color: #9a381f;
+   box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+   transition: all 1s;
+}
+.nav-links .home a{
+    color: #ffd211;
+}
+.nav-links li a:hover{
+    background-color: #9a381f;
+    color: #ffd211;
+}
+.nav-links li a::after{
+    content: "";
+    height: .2rem;
+    width: 0%;
+    background-color: #ffd211;
+    display: block;
+    transition: .5s;
+}
+.nav-links li a:hover::after{
+    width: 100%;
+}
+nav .fa{
+    display: none;
+}
+
+
+/* --------DROPDOWN MENU--------- */
+.sub-menu{
+    background-color: #ffd211;
+    min-width: 20rem;
+    height: 16rem;
+    border-radius: .5rem;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+   z-index: 23;
+    position: relative;
+
+}
+.about{
+    position: relative;
+    
+}
+
+.about:hover .sub-menu{
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    position: absolute;
+    left: -3rem;
+}
+
+
+.sub-menu ul li{
+    border-bottom: .2rem solid white;
+    padding-left: 4rem; 
+}
+
+/* --------BANNER AREA-------- */
+.banner-area{
+   min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.banner-area::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);
+
+}
+.img-container{
+    height: 100vh;
+    width: 100%;
+   
+}
+.img-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5));
+}
+/* -----3D BOX----- */
+.container{
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.content{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: anime 30s linear infinite;
+    -webkit-animation: anime 30s linear infinite;
+    cursor: pointer;
+}
+/* ---animation--- */
+
+@keyframes anime {
+    from{
+       transform: rotateX(-30deg) rotateY(9deg);
+       -webkit-transform: rotateX(-30deg) rotateY(9deg);
+       -moz-transform: rotateX(-30deg) rotateY(9deg);
+       -ms-transform: rotateX(-30deg) rotateY(9deg);
+       -o-transform:  rotateX(-30deg) rotateY(9deg); 
+    }
+    to{
+       transform: rotate(2160deg) rotateY(2160deg);
+       -webkit-transform: rotate(2160deg) rotateY(2160deg);
+       -moz-transform: rotate(2160deg) rotateY(2160deg);
+       -ms-transform: rotate(2160deg) rotateY(2160deg);
+       -o-transform:  rotate(2160deg) rotateY(2160deg);
+    }
+}
+
+.content div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    padding: 10px;
+    border: 1px solid #ccc;
+    opacity: .9;
+    transition: transform 0.2s ease-in;
+    -webkit-transition: transform 0.2s ease-in;
+    -moz-transition: transform 0.2s ease-in;
+    -ms-transition: transform 0.2s ease-in;
+    -o-transition: transform 0.2s ease-in;
+}
+.front{
+   transform: translateZ(100px);
+   -webkit-transform: translateZ(100px);
+   -moz-transform: translateZ(100px);
+   -ms-transform: translateZ(100px);
+   -o-transform: translateZ(100px);
+   background-image: url(../images/YUFATLOGOFINAL.png);
+   background-size: cover;
+   background-position: center;
+}
+.back{
+   transform: translateZ(-100px) rotateY(180deg);
+   -webkit-transform: translateZ(-100px) rotateY(180deg);
+   -moz-transform: translateZ(-100px) rotateY(180deg);
+   -ms-transform: translateZ(-100px) rotateY(180deg);
+   -o-transform: translateZ(-100px) rotateY(180deg);
+   background-image: url(../images/codinAndDisability.JPG);
+   background-size: cover;
+   background-position: center;
+}
+.left{
+   transform: rotateY(270deg) translateX(-100px);
+   -webkit-transform: rotateY(270deg) translateX(-100px);
+   -moz-transform: rotateY(270deg) translateX(-100px);
+   -ms-transform: rotateY(270deg) translateX(-100px);
+   -o-transform:  rotateY(270deg) translateX(-100px);
+   transform-origin: center left;
+   background-image: url(../images/girlcode.JPG);
+   background-size: cover;
+   background-position: center;
+}
+
+.right{
+   transform: rotateY(-270deg) translateX(100px);
+   -webkit-transform: rotateY(-270deg) translateX(100px);
+   -moz-transform: rotateY(-270deg) translateX(100px);
+   -ms-transform: rotateY(-270deg) translateX(100px);
+   -o-transform:  rotateY(-270deg) translateX(100px);
+   transform-origin: top right;
+   background-image: url(../images/CodingKids.JPG);
+   background-size: cover;
+   background-position: center;
+}
+.top{
+   transform: rotateX(-270deg) translateY(-100px);
+   -webkit-transform: rotateX(-270deg) translateY(-100px);
+   -moz-transform: rotateX(-270deg) translateY(-100px);
+   -ms-transform: rotateX(-270deg) translateY(-100px);
+   -o-transform:  rotateX(-270deg) translateY(-100px);
+   transform-origin: right top;
+   background-image: url(../images/YUFATLOGOFINAL.png);
+   background-size: cover;
+   background-position: center;
+}
+.bottom{
+   transform: rotateX(270deg) translateY(100px);
+   -webkit-transform: rotateX(270deg) translateY(100px);
+   -moz-transform: rotateX(270deg) translateY(100px);
+   -ms-transform: rotateX(270deg) translateY(100px);
+   -o-transform:  rotateX(270deg) translateY(100px);
+   transform-origin: bottom center;
+   background-image: url(../images/YUFATLOGOFINAL.png);
+   background-size: cover;
+   background-position: center;
+}
+
+/* -----3D HOVER--- */
+.content:hover .front{
+   transform: translateZ(200px);
+   -webkit-transform: translateZ(200px);
+   -moz-transform: translateZ(200px);
+   -ms-transform: translateZ(200px);
+   -o-transform: translateZ(200px);
+}
+.content:hover .back{
+   transform: translateZ(-200px) rotateY(180deg);
+   -webkit-transform: translateZ(-200px) rotateY(180deg);
+   -moz-transform: translateZ(-200px) rotateY(180deg);
+   -ms-transform: translateZ(-200px) rotateY(180deg);
+   -o-transform: translateZ(-200px) rotateY(180deg);
+}
+.content:hover .left{
+   transform: rotateY(270deg) translateZ(100px) translateX(-100px);
+   -webkit-transform: rotateY(270deg) translateZ(100px) translateX(-100px);
+   -moz-transform: rotateY(270deg) translateZ(100px) translateX(-100px);
+   -ms-transform: rotateY(270deg) translateZ(100px) translateX(-100px);
+   -o-transform:  rotateY(270deg) translateZ(100px) translateX(-100px);
+}
+.content:hover .right{
+   transform: rotateY(-270deg) translateZ(100px) translateX(100px);
+   -webkit-transform: rotateY(-270deg) translateZ(100px) translateX(100px);
+   -moz-transform: rotateY(-270deg) translateZ(100px) translateX(100px);
+   -ms-transform: rotateY(-270deg) translateZ(100px) translateX(100px);
+   -o-transform:  rotateY(-270deg) translateZ(100px) translateX(100px);
+}
+.content:hover .top{
+    transform: rotateX(-270deg) translateZ(20px) translateY(-100px);
+   -webkit-transform: rotateX(-270deg) translateZ(20px) translateY(-100px);
+   -moz-transform: rotateX(-270deg) translateZ(20px) translateY(-100px);
+   -ms-transform: rotateX(-270deg) translateZ(20px) translateY(-100px);
+   -o-transform:  rotateX(-270deg) translateZ(20px) translateY(-100px);
+   
+}
+
+/* ------ABOUT US STYLE----- */
+.course{
+    text-align: center;
+    width: 80%;
+    padding-top: 5rem;
+    margin: auto;
+}
+h1{
+    font-size: 4rem;
+    font-weight: 600;
+}
+/* -----AUTO TYPING SECTION---- */
+.auto-type-container{
+    background-color: #ffd211;
+    height: 15rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+.auto-type-container .auto-text p{
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 40%;
+}
+.auto-type-container .yufat{
+    color: #9a381f;
+    font-size: 4rem;
+    font-weight: bold;
+}
+.auto-text p .beneficiaries{
+    color: green;
+    font-size: 3rem;
+    padding-left: 2rem;
+    letter-spacing: .4rem;
+}
+.course-p{
+    color: #777;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.4rem;
+    padding: .8rem;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    background: url(../images/mission3.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+    height: 50rem;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    padding: 0 8rem;
+   
+
+}
+
+.course-col{
+    flex-basis: 31%;
+    background: rgba(54, 53, 53, 0.8);
+    margin-bottom: 5%;
+    padding: 1rem 1rem;
+    border-radius: .5rem;
+    height: 25rem;
+ 
+}
+.course-col h2{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd211;
+}
+.course-col p{
+    color: #fff;
+    font-size: 1.8rem;
+    padding: .3rem 0;
+}
+
+.banner-text{
+    margin-left:  8rem;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner-text h1{
+    color: #fff;
+    font-size: 6rem;
+    text-align: center;
+}
+.banner-text p{
+    color: #ccc;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+
+/* --------PROGRAMME SECTION---------- */
+.program-container h1{
+    color: #9a381f;
+    padding: 2rem;
+}
+.program-info{
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(247, 247, 247);
+}
+.program-img-container{
+    height: 30rem;
+    width: 50rem;
+}
+.program-img-container img{
+    height: 100%;
+    width: 100%;
+}
+.program-text{
+    max-width: 80rem;
+}
+.program-text h5{
+    font-size: 2.5rem;
+    text-align: center;
+    
+}
+.program-text p{
+    font-size: 1.9rem;
+    line-height: 3rem;
+    padding-right: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* --------COURSE AREA ROTATE CARD--------- */
+
+
+.title-course h1,h2{
+    text-align: center;
+    padding-bottom: 2rem;
+}
+.title-course h2{
+    font-size: 1.9rem;
+    color: #9a381f;
+}
+
+.pictures {
+    position: relative;
+}
+
+.pic {
+    height: 30rem;
+    width: 100%;
+    background-image: url(../images/modules.jpg);
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
+    padding: 3rem 2rem;
+}
+
+.fleck {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.count-img {
+  position: relative;
+  border-radius: 1rem;
+  height: 25rem;
+  width: 25rem;
+  perspective: 150rem;
+}
+
+.front-title {
+    margin: 0 auto;
+    width: 50rem;
+    font-size: 4rem;
+    position: relative;
+}
+.front-title i{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 50%;
+    font-size: 2.5rem;
+    
+}
+.front-title i img{
+    width: 100%;
+}
+
+
+
+
+span.d{
+    font-size: 1.8rem;
+}
+
+
+.front-side .front-title{
+    background: rgba(54, 53, 53, 0.6);
+    text-align: center;
+    height: 25rem;
+    width: 25rem;
+    padding: 2rem;
+    border-radius: 50%;
+}
+
+.back-side {
+    padding: 2rem;
+    background-color: rgba(94, 150, 196, 0.3);
+    transform: rotateY(-180deg);
+}
+.back-side p{
+    font-weight: bold;
+}
+.back-side a{
+    padding: 1.1rem;
+    text-decoration: none;
+    background-color: #9a381f;
+    color: #ffd211;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.back-link {
+    padding: .5rem 1rem;
+    background: rgba(255,255,255,.5);
+    color: #fff;
+    margin-left: 1rem;
+    border-radius: 1rem;
+}
+.back-side .donate-btn{
+    width: 10rem;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25rem;
+    height: 25rem;
+    backface-visibility: hidden;
+    
+    transition: transform 2s;
+}
+.back-side .front-p{
+    color: #fff;
+}
+
+
+
+.count-img:hover .front-side{
+    transform: rotateY(180deg);
+}
+.count-img:hover .front-side i{
+    opacity: 0;
+    transition-delay: 1s;
+}
+
+.count-img:hover .back-side {
+    transform: rotateY(0);
+}
+
+.front-p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+
+/* <!-- --------DONATE AREA------ --> */
+.donate-area-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 4rem;
+    background-color: rgba(154,56,31,.1);
+}
+.donate-image{
+    height: 17rem;
+    width: 17rem;
+    border-radius: 50%;
+    box-shadow: 0 0 6px 3px rgba(154,56,31,.5);
+    margin-right: 4rem;
+}
+.donate-image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.donate-reason{
+    font-size: 2rem;
+    background-color: green;
+    max-width: 100rem;
+
+}
+
+.donate-btn{
+    background-color: orangered;
+    border-radius: .5rem;
+    transition: .5s all;
+}
+
+.donate-btn a{
+    padding: 1.5rem 2rem;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.donate-btn:hover{
+    background-color: blueviolet;
+}
+
+h1{
+    text-align: center;
+}
+
+.logo-one{
+    height: 14rem;
+    width: 17rem;
+}
+
+.logo-one img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+.partners-logo{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10rem;
+    margin-top: 3rem;
+    background-color: #f7f7f7;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* -------FOOTER------ */
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    padding: 0rem 15rem;
+}
+.footer-headers p{
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 3rem 0rem;
+    color: orangered;
+}
+.footer-headers p::before{
+    content: "";
+    height: .2rem;
+    display: block;
+    background-color: orangered;
+    width: 100%;
+}
+.quick-links li{
+    list-style: none;
+    padding-bottom: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.quick-links li a{
+    text-decoration: none;
+}
+
+.quick-access ul li a{
+    color: white;
+    transition: .5s;
+}
+.quick-access ul li a:hover{
+    color: orange;
+}
+.footer-donate-btn{
+    margin-top: 7rem;
+}
+.footer-donate-btn a{
+    background-color: orangered;
+    color: white;
+    font-size: 1.7rem;
+    text-decoration: none;
+    display: block;
+    padding: 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 1s;
+}
+.footer-donate-btn a:hover{
+    background-color: #9a381f;
+    color: #ffd211;
+}
+.quick-links li span{
+    padding: 0 1rem;
+}
+.quick-links li a span{
+    color: white;
+    transition: all 1s;
+}
+.fa-twitter{
+    color: #1da1f2;
+}
+.twitter span:hover{
+    color: #1da1f2;
+}
+
+
+.fa-facebook-f{
+    color: #3b5998;
+}
+.facebook span:hover{
+    color: #3b5998;
+}
+
+.fa-whatsapp{
+    color: green;
+}
+
+.quick-links li .whatsapp span:hover{
+    color: green;
+}
+
+.fa-instagram{
+    color: #833ab4;
+}
+.quick-links .instagram span:hover {
+    color: #833ab4;
+}
+
+.fa-linkedin{
+    color: #0072b1;
+}
+.linkedin span:hover{
+    color: #0072b1;
+}
+
+
+
+
+
+/* --------------TEAM  PAGE-------- */
+.executive{
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 2rem;
+    letter-spacing: .2rem;
+}
+.executive-row1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 10rem;
+    background:rgba(0, 0, 0, .1);
+}
+.executive::after{
+    content: "";
+    display: block;
+    width: 4%;
+    height: .2rem;
+    background-color: #9a381f;
+}
+
+.executive-img-box{
+    width: 25rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+    border-radius: .3rem;
+    transition: 1s;
+}
+
+.executive-img-box:hover{
+    transform: scale(1.07);
+}
+
+.executive-img-box .quick-links{
+    background-color: #9a381f;
+    padding-top: 1.5rem;
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.executive-img-box:hover ul{
+    transform: translateX(0);
+}
+.executive-img-box .quick-links li{
+    display: inline-block;
+}
+.executive-img-box .quick-links li a{
+    padding: 1rem;
+}
+.executive-img-box .quick-links li a:hover{
+    background-color: whitesmoke;
+}
+.after-element{
+    background-color: #9a381f;
+    height: 28rem;
+    width: 100%;
+    position: absolute;
+    top: -13rem;
+    left: 0;
+    cursor: pointer;
+    z-index: -2;
+    border-radius: 40%;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+.executive-img-box:hover .after-element{
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+.executive-img-box .executive-img-container{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    margin-left: 2.4rem;
+    
+    
+
+}
+.executive-img-box:hover .executive-img-container img{
+    transform: scale(.9);
+    border: 3px solid white;
+}
+.executive-img-container img{
+    margin: .5rem 0;
+    transition: all 1s;
+    
+    
+}
+.executive-img-box .executive-img-container img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+     
+}
+.executive-profile h2{
+    padding-top: 4rem;
+    font-weight: bold;
+}
+.executive-profile h4{
+    text-align: center;
+    font-size: 1.3rem;
+    padding-bottom: 2rem;
+}
+
+/* -------volunteer with us---- */
+.volunteer-text{
+    padding-left: 10rem;
+    background-color: rgba(0, 0, 0, .1);
+    padding-bottom: 2rem;
+}
+.volunteer-text a{
+    display: inline-block;
+    padding: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #9a381f;
+    text-decoration: none;
+    color: white;
+    border-radius: .4rem;
+}
+
+.volunteer-text a:hover{
+    background-color: #ffd211;
+    transition: 1.5s;
+}
+
+
+
+/* -------PROJECT STYLE------ */
+.project-par{
+    padding-top: 2rem;
+}
+.project-title-text{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #9a381f;
+}
+.project-row1{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 5rem 3rem;
+}
+.project-box{
+    width: 35rem;
+    height: 45rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .8);
+    border-radius: .5rem;
+}
+
+
+
+.pjct-img-container{
+    width: 100%;
+    height: 100%;
+}
+
+.pjct-img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+    transition: 1s;
+    background-color: rgba(0, 0, 0, .1);
+
+}
+.project-box:hover .pjct-img-container img{
+    transform: scale(1.2);
+}
+.prjct-text-container{
+    position: absolute;
+    height: 42rem;
+    width: 32rem;
+    background-color: rgba(154, 56, 31, .7);
+    top: 1.5rem;
+    left: 1.5rem;
+    border-radius: .5rem;
+    transform: translateY(90%);
+    transition: 1s;
+}
+.project-box:hover .prjct-text-container{
+    transform: translateY(0);
+}
+.prjct-text h5{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd211;
+    margin-bottom: 1.3rem;
+    display: block;
+}
+.prjct-text{
+    padding: 2rem;
+    font-size: 1.9rem;
+    color: white;
+    font-weight: bold;
+
+}
+
+
+/* --------CONTACT SECTION------ */
+.contact-icons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem 0rem;
+    background-color: #ffd211;
+}
+.contact-icons li{
+    list-style: none;
+    
+}
+.contact-icons li a{
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold; 
+}
+.contact-icons li a span{
+    padding-left: 1rem;
+    color: black;
+}
+
+/* -----------------FILL FORM------- */
+.form-container{
+    text-align: center;
+}
+.form-container p{
+    padding: 2rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.contact-us input{
+    display: block;
+    padding: 1rem;
+}
+
+form{
+    
+    display: inline-block;
+    
+}
+input, textarea{
+    width: 50rem;
+    margin-bottom: 1.3rem;
+    outline: none;
+}
+.hero-btn{
+    display: block;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border: .1rem solid white;
+    background-color: orangered;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* -------small phone nav--- */
+
+@media(max-width: 1460px){
+    /* ------PROJECT SECTION----- */
+    .project-box{
+        
+        height: 40rem;
+        width: 30rem;
+    }
+    .prjct-text-container{
+        position: absolute;
+        height: 37rem;
+        width: 27rem;
+        
+    }
+}
+
+@media(max-width: 1290px){
+    /* ------TEAM SECTION----- */
+    html{font-size: 55%;
+    }
+    .executive-row1{
+        padding: 2rem 3rem;
+    }
+    /* ---------PROJECT SECTION---- */
+    .project-box{
+        height: 35rem;
+        width: 25rem;
+        
+    }
+    .prjct-text-container{
+        position: absolute;
+        height: 32rem;
+        width: 22rem;
+        
+    }
+}
+
+@media(max-width: 960px){
+
+    /* ------MODULES OFFERED----- */
+    .back-side .front-p{
+        font-size: 1.8rem;
+    }
+    /* ------ABOUT US----- */
+    .course-col p,h2{
+        
+        font-size: 1.8rem;
+        
+    }
+    
+    /* ------TEAM SECTION---- */
+    html{font-size: 50%;
+    }
+
+
+
+}
+@media(max-width: 850px){
+    html{font-size: 45%;
+    }
+    .course-col{
+        height: 45rem;
+    }
+    
+    .course-col p{
+        font-size: 2.5rem;
+    }
+    
+    /* ------ABOUR US STYLE----- */
+
+}
+@media(max-width: 780px){
+    /* ------Modules covered------ */
+    .count-img{
+        font-size: 20%;
+    }
+    /* ----TEAM SECTION--- */
+    html{
+        font-size: 43%;
+    }
+    .executive-row1{
+        padding: 2rem 1rem;
+    }
+   
+}
+@media(max-width: 700px){
+    /* ------ABOUT US----- */
+    .row .course-col p,h2{
+        
+        font-size: 3rem;
+        
+    }
+    
+
+    /* -------MODULES OFFERED----- */
+    .count-img{
+        font-size: 15%;
+    }
+    .back-side p{
+        font-size: 2.5rem;
+    }
+
+    /* -------DONATE AREA----- */
+    .donate-area-container{
+        padding: 5rem 2rem;
+        flex-direction: column;
+    }
+    .donate-reason {
+        font-size: 1.4rem;
+        padding: 0 8rem;
+    }
+    .donate-area-container .donate-reason,.donate-btn{
+        margin-top: 3rem;
+    }
+    
+    /* ------TEAM SECTION---- */
+    html{
+        font-size: 36%;
+    }
+    
+    
+    nav .fa{
+        display: block;
+        font-size: 2.5rem;
+        box-shadow: 0 0 6px 0 rgba(154,56,31,.5);
+        padding: 1rem;
+        width: 4rem;
+        border-radius: .3rem;
+    }
+    .parent-nav-links{
+        background-color: #ffd211;
+        height: 100vh;
+        position: absolute;
+        top: -100vh;
+        right: 0;
+        padding: 4%;
+        padding-right: 1rem;
+        transition: .5s;
+        z-index: 334;
+    }
+    .nav-links{
+        display: block;
+        
+    }
+    .nav-links li{
+        padding: 1rem rem;
+    }
+    .nav-links li a{
+        padding-right: 7rem;
+        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, .1);
+        transition: .5s;
+    }
+    .nav-links li a:hover{
+        box-shadow: 0 0px 6px 0 rgba(0, 0, 0, .1);
+    }
+    .nav-links .home a{
+        color: white;
+    }
+    /* -------BANNER AREA----- */
+    .banner-text h1{
+        font-size: 2.5rem;
+        /* margin: 15rem 0 0 5rem; */
+        width: 100%;
+    }
+
+    .banner-text P{
+        width: 100%;
+    }
+
+    /* -----3D BOX IN RESPONSIVE----- */
+.container{
+    height: 10rem;
+    width: 13rem;
+    margin: 0 0 30rem 8rem;
+    left: 30%;
+}
+
+.content{
+    width: 100px;
+    height: 100px;
+}
+
+.content div{
+    width: 100%;
+    height: 100%;
+}
+.front{
+    transform: translateZ(0px);
+    -webkit-transform: translateZ(0px);
+    -moz-transform: translateZ(0px);
+    -ms-transform: translateZ(0px);
+    -o-transform: translateZ(0px);
+    background-image: url(../images/YUFATLOGOFINAL.png);
+    background-size: cover;
+    background-position: center;
+ }
+
+ /* -----MEDIA FOR ABOUT US ROW--- */
+ .row{
+    flex-direction: column;
+}
+.course-col p{
+    font-size: 1rem;
+}
+h3{
+    font-size: 2rem;
+}
+
+.banner-text{
+    margin-left:  8rem;
+    position: absolute;
+    top: 73%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+
+}
+
+.banner-text h1{
+    color: #fff;
+    font-size: 2.5rem;
+}
+.banner-text p{
+    color: #ccc;
+    font-size: 2rem;
+}
+
+ /* ------------media for row1-------------- */
+.programme-row1{
+    flex-direction: column;
+    display: flex;
+}
+
+.image-container-progromme{
+    flex-direction: column;
+    width: 20%;
+    margin: auto;
+}
+
+
+.programme-text p{
+    font-size: 1.5rem;
+}
+
+/* --------heading1 for our programs---------- */
+.programs-container h1{
+    font-size: 2rem;
+    text-align: center;
+}
+
+}
+
+@media(max-width: 600px){
+
+    /* -------AUTO TYPING SECTION----- */
+    .auto-type-container .yufat{
+        color: #9a381f;
+        font-size: 2.8rem;
+        font-weight: bold;
+    }
+    .auto-text p .beneficiaries{
+        color: green;
+        font-size: 2rem;
+        padding-left: 2rem;
+        letter-spacing: .4rem;
+    }
+    /* -----MODULES OFFERED----- */
+    .fleck{
+        flex-direction: column;
+        
+        align-items: center;
+    }
+    .fleck .count-img{
+        margin-top: 4rem;
+    }
+     
+    .pic{
+        height: auto;
+    }
+    .front-title {
+        margin: 0 auto;
+        width: 50rem;
+        font-size: 1rem;
+        position: relative;
+    }
+    /* ------ABOUT US----- */
+    .course-col p,h2{
+        
+        font-size: 1.8rem;
+        
+    }
+    .course-col{
+        min-width: 40rem;
+    }
+    .row{
+        height: auto;
+    }
+    /* ------PROGRAM SECTION----- */
+    .program-info{
+        padding: 2rem 1rem;
+        flex-direction: column;
+        justify-content: space-around;
+        max-width: 55rem;
+    }
+    .program-text h5{
+        padding-top: 2rem;
+    }
+    .program-info2{
+      flex-direction: column-reverse;
+    }
+    .program-img-container{
+        width: 39rem;
+    }
+    /* ----TEAM SECTION--- */
+    html{
+        font-size: 55%;
+    }
+    .executive-row1{
+        flex-direction: column;
+   
+ }
+ .executive-img-box{
+     margin-bottom: 2rem;
+ }
+    /* ------PROJECT SECTION----- */
+    .project-row1{
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(1, 17, 1);
+
+    }
+    .project-box{
+        margin-bottom: 3rem;
+        
+    }
+
+    /* -----CONTACT SECTION----- */
+    input, textarea{
+        width: 30rem;
+
+    }
+    .contact-icons{
+        padding: 3rem 2rem;
+    }
+    .contact-icons li a{
+        font-size: 1.2rem;
+
+    }
+  
+
+ /* ------FOOTER SECTION---- */
+ .footer{
+     padding: 0 2rem;
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
